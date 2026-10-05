@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #F8F5EC;
+  --foreground: #14251C;
+  --gold: #B98225;
+  --light-gold: #D9AD55;
+  --lotus-red: #8E211C;
+  --muted: #6F7168;
+  --surface: #FFFDF7;
+  --border: #E5DCC8;
+  --font-body: var(--font-geist-sans), Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: var(--gold);
+  --color-light-gold: var(--light-gold);
+  --color-lotus-red: var(--lotus-red);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
 }
 
 body {
+  min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background: var(--light-gold);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
