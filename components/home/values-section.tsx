@@ -4,22 +4,22 @@ import { Reveal } from "@/components/ui/reveal";
 
 const values = [
   {
-    number: "01",
-    title: "Chosen with intention",
+    number: "Listen",
+    title: "Follow Panditji's guidance",
     description:
-      "A considered edit of spiritual and devotional products, not more noise.",
+      "Hear the ritual instructions clearly and move through each step with confidence.",
   },
   {
-    number: "02",
-    title: "Rooted in tradition",
+    number: "Follow",
+    title: "Perform each offering and prayer",
     description:
-      "Familiar puja essentials for the customs, stories, and practices you cherish.",
+      "Take the Sankalp, make the offerings, and chant the mantras as the ritual unfolds.",
   },
   {
-    number: "03",
-    title: "Made for real life",
+    number: "Continue",
+    title: "Pause, rewind, repeat when needed",
     description:
-      "Thoughtful finds for everyday prayer, festival gatherings, and heartfelt giving.",
+      "Stay in control of your pace while you continue through the Anushthan with clarity.",
   },
 ];
 
@@ -29,16 +29,16 @@ export function ValuesSection() {
       <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <Reveal>
           <SectionHeading
-            eyebrow="The Chants & Bells way"
-            title="A more thoughtful way to find what feels right."
-            description="A little care in the choosing can make space for a deeper connection to the things you do every day."
+            eyebrow="The core proposition"
+            title="You perform the pooja. Panditji guides you."
+            description="This is not a video of someone performing a pooja on your behalf. You take the Sankalp, make the offerings, chant the mantras, and perform the pooja yourself."
           />
         </Reveal>
         <div className="divide-y divide-border border-y border-border">
           {values.map((value, index) => (
             <Reveal key={value.number} delay={index * 0.07}>
-              <article className="grid gap-3 py-6 sm:grid-cols-[3.5rem_1fr] sm:gap-5 sm:py-7">
-                <span className="font-serif text-sm text-gold">
+              <article className="grid gap-3 py-6 sm:grid-cols-[6rem_1fr] sm:gap-5 sm:py-7">
+                <span className="font-serif text-lg text-gold">
                   {value.number}
                 </span>
                 <div>

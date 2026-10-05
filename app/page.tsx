@@ -12,9 +12,9 @@ import BuyingPatterns from "@/components/home/BuyingPatterns";
 import { ScrollReveal } from "@/components/animations/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Chants & Bells | Thoughtful Devotional Essentials",
+  title: "Chants & Bells | Ancient Wisdom. Modern Life.",
   description:
-    "Discover thoughtfully chosen puja samagri, devotional products and Navratri essentials for meaningful moments of worship and everyday practice.",
+    "Perform your Navratri pooja at home with guided step-by-step instructions, Sanskrit mantras, and authentic support from an experienced Panditji.",
 };
 
 export default function HomePage() {

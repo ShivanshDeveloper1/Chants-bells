@@ -25,12 +25,8 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <Button
-             href="tel:+919760550358"
-            size="compact"
-          >
-            <span className="lg:hidden">Call</span>
-            <span className="hidden lg:inline">+919760550358</span>
+          <Button href="/#book-your-navratri-anushthan" size="compact">
+            Book Your Navratri Anushthan
           </Button>
           <MobileNavigation />
         </div>

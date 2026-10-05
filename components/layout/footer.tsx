@@ -11,8 +11,7 @@ export function Footer() {
           <div>
             <Brand />
             <p className="mt-5 max-w-sm text-sm leading-6 text-muted">
-              Thoughtfully chosen devotional essentials for meaningful moments
-              of worship and everyday practice.
+              Ancient Wisdom. Modern Life.
             </p>
           </div>
           {footerNavigation.map(({ title, links }) => (

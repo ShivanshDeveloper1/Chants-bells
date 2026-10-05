@@ -3,16 +3,16 @@ import { Reveal } from "@/components/ui/reveal";
 
 const assurances = [
   {
-    title: "A considered edit",
-    detail: "Fewer things, chosen with care.",
+    title: "Pause anytime",
+    detail: "Stop when you need time, then continue when you are ready.",
   },
   {
-    title: "Easy to explore",
-    detail: "Find the essentials for your practice.",
+    title: "Repeat as needed",
+    detail: "Rewind a mantra or revisit a chapter whenever required.",
   },
   {
-    title: "Here for every occasion",
-    detail: "Everyday rituals and festival moments.",
+    title: "Guided in your language",
+    detail: "Hindi guidance, Sanskrit mantras, and English subtitles for clarity.",
   },
 ];
 

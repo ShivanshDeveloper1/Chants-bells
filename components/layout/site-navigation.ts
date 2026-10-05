@@ -5,10 +5,10 @@ export type NavigationLink = {
 
 export const primaryNavigation: NavigationLink[] = [
   { label: "Home", href: "/" },
-  { label: "Videos", href: "/videos-collection" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "How It Works", href: "/videos-collection" },
+  { label: "What’s Included", href: "/about" },
+  { label: "FAQs", href: "/services" },
+  { label: "Login", href: "/login" },
 ];
 
 export const footerNavigation = [
