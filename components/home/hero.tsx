@@ -1,14 +1,69 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import CountdownTimer from "../CountdownTimer";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const heroImage =
   "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=1800&q=90";
 
 export function Hero() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleOpenPasswordPrompt = () => {
+    setErrorMsg("");
+    setPassword("");
+    setShowPasswordModal(true);
+  };
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMsg("");
+
+    if (password !== "1234") {
+      setErrorMsg("Incorrect password. Please try again.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          anusthanId: "anusthan-1",
+          password: password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success && data.fileId) {
+        setShowPasswordModal(false);
+        router.push(`/watch?fileId=${data.fileId}`);
+      } else {
+        setErrorMsg(data.message || "Booking failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Booking error:", error);
+      setErrorMsg("An unexpected error occurred.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="overflow-hidden border-b border-border/70">
+    <section className="relative overflow-hidden border-b border-border/70">
       <Container className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-20">
         <Reveal onLoad className="relative z-10">
           <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
@@ -24,13 +79,8 @@ export function Hero() {
             Perform your Navratri pooja yourself at home, with authentic
             step-by-step guidance from an experienced Panditji.
           </p>
-          <p className="mt-4 max-w-lg text-base leading-7 text-muted">
-            A professionally pre-recorded guided Anushthan designed to help you
-            understand what to do, follow the correct sequence, chant along, and
-            perform your pooja with confidence.
-          </p>
           <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
-            <Button href="/#book-your-navratri-anushthan">
+            <Button onClick={handleOpenPasswordPrompt}>
               Book Your Navratri Anushthan
             </Button>
           </div>
@@ -58,9 +108,9 @@ export function Hero() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
               Navratri begins in:
             </p>
-            <p className="mt-3 text-xl font-medium text-foreground">
-            <CountdownTimer />
-            </p>
+            <div className="mt-3 text-xl font-medium text-foreground">
+              <CountdownTimer />
+            </div>
             <p className="mt-3 text-sm leading-6 text-muted">
               Book in advance and receive your complete preparation guide and
               samagri checklist immediately.
@@ -102,6 +152,48 @@ export function Hero() {
           </div>
         </Reveal>
       </Container>
+
+      {/* --- Password Modal Box --- */}
+      {showPasswordModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-2xl">
+            <h3 className="text-xl font-bold text-foreground">Access Access Code</h3>
+            <p className="mt-1 text-sm text-muted">
+              Enter the access password to view the video.
+            </p>
+
+            <form onSubmit={handlePasswordSubmit} className="mt-4 space-y-4">
+              <div>
+                <input
+                  type="password"
+                  placeholder="Enter Password (1234)"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-foreground placeholder:text-muted focus:border-gold focus:outline-none"
+                  autoFocus
+                />
+                {errorMsg && (
+                  <p className="mt-2 text-xs text-red-500">{errorMsg}</p>
+                )}
+              </div>
+
+              <div className="flex justify-end gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setShowPasswordModal(false)}
+                  disabled={loading}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={loading}>
+                  {loading ? "Verifying..." : "Watch Video"}
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
