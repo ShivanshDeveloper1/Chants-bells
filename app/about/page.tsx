@@ -23,13 +23,13 @@ export default function AboutPage() {
               Bringing the <span className="italic text-gold">Temple</span> to Your Screen.
             </h1>
             <div className="prose prose-lg text-muted-foreground">
-              <p className="mb-6">
+              <p className="mb-6 font-bold">
                 Performing Navratri rituals at home can be overwhelming without the right guidance. 
                 We created Chants & Bells Video Services to bridge the gap between devotion and knowledge.
               </p>
-              <p className="mb-6">
-                Instead of simply providing the physical items, we provide the **authentic, step-by-step 
-                visual guidance** recorded by expert pandits. From Ghatasthapana to Kanya Pujan, our premium 
+              <p className="mb-6 font-bold">
+                Instead of simply providing the physical items, we provide the authentic, step-by-step 
+                visual guidance recorded by expert pandits. From Ghatasthapana to Kanya Pujan, our premium 
                 video collections ensure your 9-day fasting and puja are done with exact Vedic precision.
               </p>
             </div>

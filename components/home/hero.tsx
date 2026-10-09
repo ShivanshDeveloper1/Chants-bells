@@ -76,8 +76,7 @@ export function Hero() {
             bring the <span className="italic text-gold">Divine</span> home.
           </h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            Perform your Navratri pooja yourself at home, with authentic
-            step-by-step guidance from an experienced Panditji.
+            A professionally recorded guided anushthan
           </p>
           <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
             <Button onClick={handleOpenPasswordPrompt}>

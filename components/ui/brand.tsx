@@ -12,9 +12,9 @@ export function Brand({ className = "" }: BrandProps) {
       aria-label="Chants & Bells home"
         className={`inline-flex items-center ${className}`}
     >
-      <Image src="/logo.jpeg" alt="Chants & Bells"   width={180}
-        height={60}
-        className="h-auto w-[70px] object-contain sm:w-[70px]"
+      <Image src="/logo.jpeg" alt="Chants & Bells"   width={200}
+        height={80}
+        className="h-auto w-[100px] object-contain sm:w-[100px]"
         priority    />
     </Link>
   );

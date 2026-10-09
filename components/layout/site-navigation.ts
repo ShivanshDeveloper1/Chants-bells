@@ -8,7 +8,7 @@ export const primaryNavigation: NavigationLink[] = [
   { label: "How It Works", href: "/videos-collection" },
   { label: "What’s Included", href: "/about" },
   { label: "FAQs", href: "/services" },
-  { label: "Login", href: "/login" },
+
 ];
 
 export const footerNavigation = [

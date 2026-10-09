@@ -1,59 +1,26 @@
-What the client actually wants
+  3. THE CORE PROPOSITION
 
-From his message, the MVP is basically:
+  You perform the pooja. Panditji guides you.
 
-Pages/sections
+  This is not a video of someone performing a pooja on your behalf.
 
-Home
-About
-Services
-Testimonials
-Contact
-Payment
+  You take the Sankalp.
+  You make the offerings.
+  You chant the mantras.
+  You perform the pooja.
 
-And the important functionality:
+  Panditji guides you through the process step by step.
 
-User comes to website → chooses/pays → their Gmail/email gets captured and saved.
+  Listen → Follow → Perform → Chant → Continue
 
+  Pause whenever you need time.
 
-<!-- AGENTS.md → instructions/context for your coding agent.
-.cursor/rules/*.mdc → more advanced project rules.
-.cursor/agents/ → actual custom subagents -->
+  Rewind if you want to hear something again.
 
-<!-- 
-     <motion.svg
-  viewBox="0 0 100 100"
-  className="w-24 h-24 text-amber-600"
-  fill="none"
->
-  {/* Circle */}
-  <motion.circle
-    cx="50"
-    cy="50"
-    r="40"
-    stroke="currentColor"
-    strokeWidth="4"
-    initial={{ pathLength: 0 }}
-    animate={{ pathLength: 1 }}
-    transition={{
-      duration: 1,
-      ease: "easeInOut",
-    }}
-  />
+  Repeat a mantra or chapter when required.
 
-  {/* Checkmark */}
-  <motion.path
-    d="M30 52 L44 66 L72 36"
-    stroke="currentColor"
-    strokeWidth="5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    initial={{ pathLength: 0 }}
-    animate={{ pathLength: 1 }}
-    transition={{
-      duration: 0.7,
-      delay: 0.8,
-      ease: "easeOut",
-    }}
-  />
-</motion.svg> -->
+  Continue when you are ready.
+
+  Your pooja. Your participation. Proper guidance throughout.
+
+  ---

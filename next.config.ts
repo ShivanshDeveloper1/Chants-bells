@@ -4,7 +4,16 @@ const nextConfig: NextConfig = {
   /* config options here */
   typescript:{
     ignoreBuildErrors:true
+  },
+  images:{
+    remotePatterns:[
+      {
+        protocol:'https',
+        hostname:'images.unsplash.com'
+      }
+    ]
   }
+
 };
 
 export default nextConfig;
