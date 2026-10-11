@@ -29,7 +29,7 @@ export function ValuesSection() {
       <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <Reveal>
           <SectionHeading
-            eyebrow="The core proposition"
+            eyebrow=""
             title="You perform the pooja. Panditji guides you."
             description="This is not a video of someone performing a pooja on your behalf. You take the Sankalp, make the offerings, chant the mantras, and perform the pooja yourself."
           />

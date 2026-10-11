@@ -3,30 +3,38 @@
 import { useEffect, useState } from "react";
 
 export default function CountdownTimer() {
-  const targetDate = new Date("2026-12-25T00:00:00").getTime();
-
-  const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
+  const [mounted, setMounted] = useState(false);
+  const [remaining, setRemaining] = useState<number | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(targetDate - Date.now());
-    }, 1000);
+    setMounted(true);
 
-    return () => clearInterval(timer);
-  }, [targetDate]);
+    const targetDate = new Date("2026-10-20T23:59:59").getTime();
 
-  if (timeLeft <= 0) {
-    return <p className="mt-3 text-xl font-medium text-foreground">00:00:00</p>;
+    const updateCountdown = () => {
+      setRemaining(Math.max(0, targetDate - Date.now()));
+    };
+
+    updateCountdown();
+
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!mounted || remaining === null) {
+    return (
+      <p className="mt-3 text-xl font-medium text-foreground">
+        --d --:--:--
+      </p>
+    );
   }
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (timeLeft / (1000 * 60 * 60)) % 24
-  );
-  const minutes = Math.floor(
-    (timeLeft / (1000 * 60)) % 60
-  );
-  const seconds = Math.floor((timeLeft / 1000) % 60);
+  const totalSeconds = Math.floor(remaining / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
 
   return (
     <p className="mt-3 text-xl font-medium text-foreground">

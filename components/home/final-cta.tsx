@@ -25,7 +25,7 @@ export function FinalCta() {
                 Book your Navratri Anushthan
               </p>
               <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                Bring the divine home this Navratri.
+                This Navratri  <span className="inline-block">Bring The Divine Home </span>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-7 text-muted">
                 Perform the pooja with confidence, follow the correct sequence,

@@ -21,13 +21,13 @@ const commitments = [
 export function CollectionsSection() {
   return (
     <Section className="bg-surface" id="collections">
-      <Reveal className="mx-auto max-w-4xl text-center">
-        <SectionHeading
-          eyebrow="The Core Proposition"
-          title="You perform the pooja. Panditji guides you."
-          description="Not a pooja performed on your behalf, but a guided experience that helps you participate in every step."
-        />
-      </Reveal>
+    <Reveal className="mx-auto max-w-4xl text-center">
+  <SectionHeading
+    align="center"
+    title="You perform the pooja. Panditji guides you."
+    description="Not a pooja performed on your behalf, but a guided experience that helps you participate in every step."
+  />
+</Reveal>
 
       <Reveal className="mx-auto mt-12 max-w-4xl" delay={0.1}>
         <div className="rounded-3xl border border-gold/20 bg-background p-6 sm:p-10 lg:p-12">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/layout/footer";
+import  Footer  from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { CollectionsSection } from "@/components/home/collections-section";
 import { FinalCta } from "@/components/home/final-cta";

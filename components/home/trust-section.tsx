@@ -12,7 +12,7 @@ const assurances = [
   },
   {
     title: "Guided in your language",
-    detail: "Hindi guidance, Sanskrit mantras, and English subtitles for clarity.",
+    detail: "Hindi guidance, Sanskrit mantras.",
   },
 ];
 

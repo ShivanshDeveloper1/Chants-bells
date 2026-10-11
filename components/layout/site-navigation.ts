@@ -15,8 +15,8 @@ export const footerNavigation = [
   {
     title: "Discover",
     links: [
-      { label: "Puja essentials", href: "/collections/puja-essentials" },
-      { label: "Festival collection", href: "/collections/festivals" },
+      { label: "FAQs", href: "/collections/puja-essentials" },
+      { label: "Contact Us", href: "/collections/festivals" },
     ],
   },
   {

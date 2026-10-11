@@ -1,6 +1,6 @@
 
 import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
+import  Footer  from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -21,7 +21,7 @@ const services = [
     number: "03",
     title: "Durga Saptashati & Mantra Guidance",
     description:
-      "Follow guided recitations, Sanskrit mantras, and supporting English subtitles or transliteration where applicable.",
+      "Follow guided recitations, Sanskrit mantras.",
   },
 ];
 
@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "Will the guidance be available in Hindi?",
     answer:
-      "The experience is designed with Hindi guidance, Sanskrit mantras, and English subtitles. Transliteration is provided where applicable to help you follow the recitation.",
+      "The experience is designed with Hindi guidance, Sanskrit mantras. Transliteration is provided where applicable to help you follow the recitation.",
   },
   {
     question: "Will I need to arrange a Panditji separately?",
@@ -85,79 +85,7 @@ export default function ServicesPage() {
 
       <main className="bg-surface">
         {/* Page introduction */}
-        <section className="py-20 sm:py-24">
-          <Container>
-            <Reveal>
-              <div className="mx-auto max-w-3xl text-center">
-                <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-gold">
-                  Chants & Bells
-                </p>
-
-                <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                  Everything You Need for a
-                  <span className="block text-gold">
-                    Guided Navratri Anushthan
-                  </span>
-                </h1>
-
-                <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
-                  Prepare with confidence, follow Panditji step by step,
-                  and perform your Navratri pooja at home with authentic
-                  guidance at your own pace.
-                </p>
-              </div>
-            </Reveal>
-
-            {/* What's included */}
-            <div className="mt-14 grid gap-5 md:grid-cols-3 lg:mt-20">
-              {services.map((service, index) => (
-                <Reveal key={service.number} delay={index * 0.08}>
-                  <article className="group h-full rounded-2xl border border-border/70 bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg sm:p-8">
-                    <div className="mb-7 flex items-center justify-between">
-                      <span className="grid h-12 w-12 place-items-center rounded-full border border-gold/30 font-serif text-xl text-gold">
-                        ॐ
-                      </span>
-
-                      <span className="font-serif text-sm text-gold/70">
-                        {service.number}
-                      </span>
-                    </div>
-
-                    <h2 className="font-serif text-2xl leading-snug text-foreground">
-                      {service.title}
-                    </h2>
-
-                    <p className="mt-4 text-sm leading-7 text-muted">
-                      {service.description}
-                    </p>
-
-                    <div className="mt-7 h-px w-12 bg-gold/50 transition-all duration-300 group-hover:w-20" />
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-
-            {/* Important note */}
-            <Reveal delay={0.15}>
-              <div className="mx-auto mt-10 flex max-w-4xl flex-col gap-3 rounded-2xl border border-gold/20 bg-background/70 p-6 sm:flex-row sm:items-center sm:gap-5 sm:p-8">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/10 font-serif text-xl text-gold">
-                  ॐ
-                </div>
-
-                <div>
-                  <h2 className="font-serif text-xl text-foreground">
-                    Your pooja. Your participation.
-                  </h2>
-                  <p className="mt-2 text-sm leading-7 text-muted">
-                    Book in advance to receive your preparation guide
-                    and samagri checklist. Your guided Anushthan unlocks
-                    one day before Navratri begins.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </Container>
-        </section>
+      
 
         {/* FAQs */}
         <section

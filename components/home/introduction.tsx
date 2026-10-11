@@ -23,9 +23,10 @@ export function Introduction() {
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted md:mx-0">
               Many of us want to perform our own pooja during Navratri. But then
-              comes the questions: what samagri do I need, how do I begin, how
-              should I take the Sankalp, which prayer comes next, and how do I
-              complete the Anushthan properly?
+              comes the questions: <span className="font-bold"> what samagri do I need, how do I begin, how
+              should I take the Sankalp, which prayer comes next and how do I
+              complete the Anushthan properly ?
+              </span>
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted md:mx-0">
               Searching through different videos and sources often creates more

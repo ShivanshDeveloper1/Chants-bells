@@ -20,10 +20,10 @@ export function FestivalSection() {
                   Structured guidance for the Navratri journey.
                 </h2>
                 <p className="mt-5 max-w-lg text-sm leading-7 text-surface/75 sm:text-base">
-              The Chants & Bells Navratri Anushthan is designed around the traditional Navratri pooja, Devi Abhishek and Durga Saptshati Paath. Keeping in mind our daily lives with a hectic schedule, we offer guided support for each step of the journey.”
+              The Chants & Bells Navratri Anushthan is designed around the traditional Navratri pooja, Devi Abhishek and Durga Saptshati Paath. Keeping in mind our daily lives with a hectic schedule, we offer guided support for each step of the journey.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-surface/80 sm:text-base">
-                  <li>•Daily Guided Pooja</li>
+                  <li>• Daily Guided Pooja</li>
                   <li>• ⁠Devi Abhishek</li>
                   <li>• Durga Saptshati Paath</li>
                   <li>• Devi ⁠Hawan Vidhi</li>

@@ -100,12 +100,12 @@ export function Hero() {
           </div>
 
           <p className="mt-6 text-sm text-muted">
-            Hindi guidance • Sanskrit mantras • English subtitles
+            Hindi guidance • Sanskrit mantras
           </p>
 
           <div className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-              Navratri begins in:
+             Discount Ends In:
             </p>
             <div className="mt-3 text-xl font-medium text-foreground">
               <CountdownTimer />

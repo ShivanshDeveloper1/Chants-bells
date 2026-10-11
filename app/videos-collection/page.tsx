@@ -1,8 +1,9 @@
 import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
+import  Footer  from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const videoPackages = [
   {
@@ -21,6 +22,84 @@ const videoPackages = [
   }
 ];
 
+const services = [
+  {
+    number: "01",
+    title: "Complete Navratri Pooja Guidance",
+    description:
+      "Follow a structured, step-by-step guided Anushthan with Panditji, from the initial preparations to the pooja rituals.",
+  },
+  {
+    number: "02",
+    title: "Preparation Guide & Samagri Checklist",
+    description:
+      "Prepare in advance with a complete checklist of required pooja samagri and essential instructions before Navratri.",
+  },
+  {
+    number: "03",
+    title: "Durga Saptashati & Mantra Guidance",
+    description:
+      "Follow guided recitations, Sanskrit mantras.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What is Chants & Bells?",
+    answer:
+      "Chants & Bells helps you perform your Navratri pooja yourself at home with structured, step-by-step guidance from an experienced Panditji. You participate in the rituals while following the instructions at your own pace.",
+  },
+  {
+    question: "Will Panditji perform the pooja on my behalf?",
+    answer:
+      "No. The purpose is to help you perform the pooja yourself. Panditji guides you through the process, explaining the sequence and helping you follow each step.",
+  },
+  {
+    question: "Is this a live pooja session?",
+    answer:
+      "No. The Anushthan is professionally pre-recorded. You can follow Panditji's instructions carefully, pause when you need more time, and revisit a step whenever necessary.",
+  },
+  {
+    question: "When will I receive access to the Anushthan?",
+    answer:
+      "After booking, you receive access to your preparation area, including the samagri checklist and essential preparation guidance. The guided Anushthan becomes available one day before Navratri begins.",
+  },
+  {
+    question: "What should I prepare before Navratri?",
+    answer:
+      "Your preparation guide includes a samagri checklist and basic instructions to help you arrange the required items in advance. Please review the checklist before beginning your Anushthan.",
+  },
+  {
+    question: "Can I pause or repeat a mantra?",
+    answer:
+      "Yes. You can pause the recording when you need time for an offering, rewind an instruction, and repeat a mantra or chapter when required. Continue when you are ready.",
+  },
+  {
+    question: "Can my family participate with me?",
+    answer:
+      "Yes. You can follow the guided Anushthan individually or participate together with your family at home.",
+  },
+  {
+    question: "Will the guidance be available in Hindi?",
+    answer:
+      "The experience is designed with Hindi guidance, Sanskrit mantras. Transliteration is provided where applicable to help you follow the recitation.",
+  },
+  {
+    question: "Will I need to arrange a Panditji separately?",
+    answer:
+      "The guided experience is designed to help you perform the pooja yourself with recorded instructions. It is not an arrangement for an in-person Panditji visit or a live ceremony.",
+  },
+  {
+    question: "How long does the complete Anushthan take?",
+    answer:
+      "The duration depends on the rituals and recitations you undertake. The approximate duration for the guided components will be shared once the recording details are finalized.",
+  },
+];
+
+
+const festivalImage =
+  "https://images.unsplash.com/photo-1605292356183-a77d0a9c9d1d?auto=format&fit=crop&w=1400&q=85";
+
 export default function VideoCollectionsPage() {
   return (
     <>
@@ -28,47 +107,126 @@ export default function VideoCollectionsPage() {
       <main className="flex-1 py-20">
         <Container>
           <Reveal>
-            <h1 className="text-4xl font-serif mb-4">Premium Puja Videos</h1>
-            <p className="text-muted mb-12 max-w-2xl">
-              Purchase lifetime access to high-quality, professionally recorded puja tutorials. Watch on any device, at your own pace.
-            </p>
-            
-            <div className="grid gap-10 md:grid-cols-2">
-              {videoPackages.map((pkg) => (
-                <div key={pkg.id} className="group overflow-hidden rounded-2xl border border-border/70">
-                  {/* Video Thumbnail */}
-                  <div className="relative aspect-video overflow-hidden bg-muted">
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${pkg.thumbnail})` }}
-                    />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      {/* Play Icon Graphic */}
-                      <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-2" />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Details & Purchase */}
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-xl font-medium mb-1">{pkg.title}</h3>
-                        <p className="text-sm text-muted">{pkg.duration}</p>
-                      </div>
-                      <p className="text-lg font-semibold text-gold">{pkg.price}</p>
-                    </div>
-                    {/* In a real app, this button triggers your payment gateway */}
-                    <Button className="w-full">
-                      Purchase Access to Watch
-                    </Button>
-                  </div>
+          <div className="relative isolate overflow-hidden rounded-[1.5rem] bg-foreground text-surface sm:rounded-[2rem]">
+            <div className="grid min-h-[430px] lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="relative z-10 flex flex-col items-start justify-center px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-light-gold">
+                  Your Navratri Anushthan
+                </p>
+                <h2 className="mt-5 max-w-xl font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-[3.5rem]">
+                  Structured guidance for the Navratri journey.
+                </h2>
+                <p className="mt-5 max-w-lg text-sm leading-7 text-surface/75 sm:text-base">
+              The Chants & Bells Navratri Anushthan is designed around the traditional Navratri pooja, Devi Abhishek and Durga Saptshati Paath. Keeping in mind our daily lives with a hectic schedule, we offer guided support for each step of the journey.
+                </p>
+                <ul className="mt-6 space-y-2 text-sm text-surface/80 sm:text-base">
+                  <li>• Daily Guided Pooja</li>
+                  <li>• ⁠Devi Abhishek</li>
+                  <li>• Durga Saptshati Paath</li>
+                  <li>• Devi ⁠Hawan Vidhi</li>
+                </ul>
+                <Link
+                  href="/videos-collection"
+                  className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-gold px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-light-gold"
+                >
+                  Book Your Navratri Anushthan <span aria-hidden="true">↗</span>
+                </Link>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -bottom-16 -left-10 font-serif text-[15rem] leading-none text-surface/[0.035]"
+                >
+                  ॐ
+                </span>
+              </div>
+              <div className="relative min-h-[250px] bg-gold/20 lg:min-h-full">
+                <div
+                  role="img"
+                  aria-label="Traditional lights and offerings arranged for Navratri worship"
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url("${festivalImage}")` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/10 to-transparent lg:from-foreground/20" />
+                <div className="absolute bottom-5 right-5 rounded-full border border-surface/50 bg-foreground/25 px-4 py-2 text-xs tracking-wide text-surface backdrop-blur-sm sm:bottom-8 sm:right-8">
+                  Daily Pooja Guidance • Durga Saptashati
                 </div>
-              ))}
+              </div>
             </div>
-          </Reveal>
+          </div>
+        </Reveal>
         </Container>
+          <section className="py-20 sm:py-24">
+                  <Container>
+                    <Reveal>
+                      <div className="mx-auto max-w-3xl text-center">
+                        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-gold">
+                          Chants & Bells
+                        </p>
+        
+                        <h1 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
+                          Everything You Need for a
+                          <span className="block text-gold">
+                            Guided Navratri Anushthan
+                          </span>
+                        </h1>
+        
+                        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+                          Prepare with confidence, follow Panditji step by step,
+                          and perform your Navratri pooja at home with authentic
+                          guidance at your own pace.
+                        </p>
+                      </div>
+                    </Reveal>
+        
+                    {/* What's included */}
+                    <div className="mt-14 grid gap-5 md:grid-cols-3 lg:mt-20">
+                      {services.map((service, index) => (
+                        <Reveal key={service.number} delay={index * 0.08}>
+                          <article className="group h-full rounded-2xl border border-border/70 bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg sm:p-8">
+                            <div className="mb-7 flex items-center justify-between">
+                              <span className="grid h-12 w-12 place-items-center rounded-full border border-gold/30 font-serif text-xl text-gold">
+                                ॐ
+                              </span>
+        
+                              <span className="font-serif text-sm text-gold/70">
+                                {service.number}
+                              </span>
+                            </div>
+        
+                            <h2 className="font-serif text-2xl leading-snug text-foreground">
+                              {service.title}
+                            </h2>
+        
+                            <p className="mt-4 text-sm leading-7 text-muted">
+                              {service.description}
+                            </p>
+        
+                            <div className="mt-7 h-px w-12 bg-gold/50 transition-all duration-300 group-hover:w-20" />
+                          </article>
+                        </Reveal>
+                      ))}
+                    </div>
+        
+                    {/* Important note */}
+                    <Reveal delay={0.15}>
+                      <div className="mx-auto mt-10 flex max-w-4xl flex-col gap-3 rounded-2xl border border-gold/20 bg-background/70 p-6 sm:flex-row sm:items-center sm:gap-5 sm:p-8">
+                        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/10 font-serif text-xl text-gold">
+                          ॐ
+                        </div>
+        
+                        <div>
+                          <h2 className="font-serif text-xl text-foreground">
+                            Your pooja. Your participation.
+                          </h2>
+                          <p className="mt-2 text-sm leading-7 text-muted">
+                            Book in advance to receive your preparation guide
+                            and samagri checklist. Your guided Anushthan unlocks
+                            one day before Navratri begins.
+                          </p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  </Container>
+                </section>
       </main>
       <Footer />
     </>
