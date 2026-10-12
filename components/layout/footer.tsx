@@ -18,7 +18,7 @@ export default function Footer() {
       links: [
         { label: 'Contact & Grievance', href: '/contact' },
         { label: 'Support WhatsApp (+91 9456433321)', href: 'https://wa.me/919456433321' },
-        { label: 'Email Us', href: 'mailto:dhananjai312@gmail.com' },
+        { label: 'Email Us', href: 'mailto:chantsandbells@gmail.com' },
       ],
     },
   ];

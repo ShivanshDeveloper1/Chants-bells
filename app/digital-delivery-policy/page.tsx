@@ -37,7 +37,7 @@ export default function DigitalDeliveryPolicyPage() {
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">4. Technical Requirements and Assistance</h2>
         <p className="text-muted leading-relaxed">
-          A compatible smartphone, tablet, or computer, a supported browser, sound output, and a stable internet connection are required. If access fails, contact WhatsApp +91 9456433321 or email <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a> with your order reference.
+          A compatible smartphone, tablet, or computer, a supported browser, sound output, and a stable internet connection are required. If access fails, contact WhatsApp +91 9456433321 or email <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a> with your order reference.
         </p>
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">5. Service Reminders</h2>
@@ -48,7 +48,7 @@ export default function DigitalDeliveryPolicyPage() {
         <div className="mt-8 rounded-lg bg-surface border border-border p-6">
           <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Support Contacts</h3>
           <p className="text-sm text-muted mb-1"><strong>Website:</strong> <a href="https://www.chantsandbells.com" className="text-amber-600 hover:underline">www.chantsandbells.com</a></p>
-          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a></p>
+          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a></p>
           <p className="text-sm text-muted"><strong>Support WhatsApp:</strong> +91 9456433321</p>
         </div>
       </div>

@@ -97,7 +97,7 @@ export default function ContactPage() {
               <div className="flex flex-col items-center text-center p-4 rounded-xl bg-surface/50 border border-border/40">
                 <span className="text-gold font-serif text-2xl mb-2">✉️</span>
                 <h2 className="text-sm font-medium text-foreground">Email Support</h2>
-                <p className="text-xs text-muted mt-1">dhananjai312@gmail.com</p>
+                <p className="text-xs text-muted mt-1">chantsandbells@gmail.com</p>
               </div>
             </motion.div>
 
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   For questions regarding payments, video access, refunds, privacy, or service issues, contact:
                 </p>
                 <p><strong className="text-foreground">Grievance Contact:</strong> Dhananjai Singh (Proprietor)</p>
-                <p><strong className="text-foreground">Email:</strong> dhananjai312@gmail.com</p>
+                <p><strong className="text-foreground">Email:</strong> chantsandbells@gmail.com</p>
                 <p><strong className="text-foreground">WhatsApp / Phone:</strong> +91 94564 33321</p>
                 <p className="mt-2 text-[11px] italic">
                   *Please include your order reference number and details of the issue for faster resolution.

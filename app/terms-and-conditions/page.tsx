@@ -44,7 +44,7 @@ export default function TermsAndConditionsPage() {
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">6. Availability and Support</h2>
         <p className="text-muted leading-relaxed">
-          We work to keep the service accessible but may need reasonable maintenance or changes. If a paid video is inaccessible due to a fault on our side, contact WhatsApp +91 9456433321 or email <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a> with your order reference. We will make reasonable efforts to restore access or provide an appropriate remedy consistent with applicable law.
+          We work to keep the service accessible but may need reasonable maintenance or changes. If a paid video is inaccessible due to a fault on our side, contact WhatsApp +91 9456433321 or email <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a> with your order reference. We will make reasonable efforts to restore access or provide an appropriate remedy consistent with applicable law.
         </p>
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">7. Intellectual Property</h2>
@@ -64,7 +64,7 @@ export default function TermsAndConditionsPage() {
 
         <div className="mt-8 rounded-lg bg-surface border border-border p-6">
           <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Questions & Contact</h3>
-          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a></p>
+          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a></p>
           <p className="text-sm text-muted mb-1"><strong>Website:</strong> <a href="https://www.chantsandbells.com" className="text-amber-600 hover:underline">www.chantsandbells.com</a></p>
           <p className="text-sm text-muted"><strong>Support WhatsApp:</strong> +91 9456433321</p>
         </div>

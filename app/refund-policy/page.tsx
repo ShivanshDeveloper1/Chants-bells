@@ -31,7 +31,7 @@ export default function RefundPolicyPage() {
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">3. How to Request</h2>
         <p className="text-muted leading-relaxed">
-          Email <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a> or message WhatsApp at <strong>+91 9456433321</strong> with your name, order/transaction reference, date of payment, registered phone/email, and a brief explanation.
+          Email <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a> or message WhatsApp at <strong>+91 9456433321</strong> with your name, order/transaction reference, date of payment, registered phone/email, and a brief explanation.
         </p>
         <div className="my-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-amber-900 text-sm">
           <strong>Security Notice:</strong> Do not share OTPs, passwords, CVVs, or complete card numbers.
@@ -50,7 +50,7 @@ export default function RefundPolicyPage() {
         <div className="mt-8 rounded-lg bg-surface border border-border p-6">
           <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Support Contacts</h3>
           <p className="text-sm text-muted mb-1"><strong>Website:</strong> <a href="https://www.chantsandbells.com" className="text-amber-600 hover:underline">www.chantsandbells.com</a></p>
-          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a></p>
+          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a></p>
           <p className="text-sm text-muted"><strong>Support WhatsApp:</strong> +91 9456433321</p>
         </div>
       </div>

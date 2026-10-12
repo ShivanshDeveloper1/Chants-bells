@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
         <p className="text-muted italic">A-116, Sector 132, Noida, Gautambuddha Nagar, Uttar Pradesh 201304, India.</p>
         <p className="text-muted">
           <strong>Website:</strong> <a href="https://www.chantsandbells.com" className="text-amber-600 hover:underline">https://www.chantsandbells.com</a><br />
-          <strong>Privacy Contact:</strong> dhananjai312@gmail.com
+          <strong>Privacy Contact:</strong> chantsandbells@gmail.com
         </p>
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">2. Information We Collect</h2>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">7. Your Choices & Rights</h2>
         <p className="text-muted leading-relaxed">
-          You may contact <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a> to request access, correction, updating, or deletion of your personal information, withdraw consent, or raise a privacy grievance. Requests are handled according to applicable Indian law.
+          You may contact <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a> to request access, correction, updating, or deletion of your personal information, withdraw consent, or raise a privacy grievance. Requests are handled according to applicable Indian law.
         </p>
 
         <h2 className="font-serif text-xl font-semibold text-foreground mt-8">8. Cookies, Children & Updates</h2>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
         <div className="mt-8 rounded-lg bg-surface border border-border p-6">
           <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Privacy & Grievance Contact</h3>
           <p className="text-sm text-muted mb-1"><strong>Grievance Officer:</strong> Dhananjai Singh (Sole Proprietor)</p>
-          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:dhananjai312@gmail.com" className="text-amber-600 hover:underline">dhananjai312@gmail.com</a></p>
+          <p className="text-sm text-muted mb-1"><strong>Email:</strong> <a href="mailto:chantsandbells@gmail.com" className="text-amber-600 hover:underline">chantsandbells@gmail.com</a></p>
           <p className="text-sm text-muted mb-1"><strong>Address:</strong> A-116, Sector 132, Noida, Gautambuddha Nagar, Uttar Pradesh 201304, India</p>
           <p className="text-sm text-muted"><strong>Support WhatsApp:</strong> +91 9456433321</p>
         </div>
