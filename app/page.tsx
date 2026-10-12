@@ -10,6 +10,7 @@ import { TrustSection } from "@/components/home/trust-section";
 import { ValuesSection } from "@/components/home/values-section";
 import BuyingPatterns from "@/components/home/BuyingPatterns";
 import { ScrollReveal } from "@/components/animations/scroll-reveal";
+import YouTubePreview from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Chants & Bells | Ancient Wisdom. Modern Life.",
@@ -28,10 +29,18 @@ export default function HomePage() {
         <ScrollReveal>
           <Introduction />
         </ScrollReveal>
+<ScrollReveal>
+        <YouTubePreview />
+        </ScrollReveal>
+
+
+
 
         <ScrollReveal delay={0.1}>
           <CollectionsSection />
         </ScrollReveal>
+
+        
 
         <ScrollReveal delay={0.1}>
           <FestivalSection />
