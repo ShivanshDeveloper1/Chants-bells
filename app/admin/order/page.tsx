@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Order = {
   _id: string;
   customerName: string;
-  contact: string;
+  email: string;
   transactionId: string;
   amount: number;
   status: string;
@@ -64,7 +64,7 @@ export default function AdminOrdersPage() {
             {orders.map((order) => (
               <tr key={order._id} className="text-sm">
                 <td className="p-4 font-medium">{order.customerName}</td>
-                <td className="p-4">{order.contact}</td>
+              <td className="p-4">{order.email}</td>
                 <td className="p-4 font-mono">{order.transactionId}</td>
                 <td className="p-4">₹{order.amount}</td>
                 <td className="p-4">
