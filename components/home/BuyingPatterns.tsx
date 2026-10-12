@@ -41,9 +41,9 @@ const BuyingPatterns = () => {
     <main className="bg-[#F8F5EC] px-4 py-20 text-foreground">
       <div className="mx-auto max-w-5xl space-y-20 md:space-y-28">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          {/* <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             How it works
-          </p>
+          </p> */}
           <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
             From preparation to completion, we guide you through the journey.
           </h2>
