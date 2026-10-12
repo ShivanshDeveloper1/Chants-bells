@@ -127,7 +127,7 @@ export default function VideoCollectionsPage() {
                 </ul>
                 <Link
                   href="/videos-collection"
-                  className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-gold px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-light-gold"
+                  className="mt-8 inline-flex min-h-12 items-center gap-3 cursor-pointer rounded-full bg-gold px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-light-gold"
                 >
                   Book Your Navratri Anushthan <span aria-hidden="true">↗</span>
                 </Link>

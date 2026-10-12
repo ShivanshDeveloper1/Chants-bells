@@ -6,6 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 import CountdownTimer from "../CountdownTimer";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import UPIPaymentForm from "../payment/UPIPaymentForm";
 
 const heroImage =
   "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=1800&q=90";
@@ -16,6 +17,9 @@ export function Hero() {
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+
+
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const handleOpenPasswordPrompt = () => {
     setErrorMsg("");
@@ -78,8 +82,8 @@ export function Hero() {
           <p className="mt-6 max-w-lg text-base leading-7 text-muted sm:text-lg sm:leading-8">
             A professionally recorded guided anushthan
           </p>
-          <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row">
-            <Button onClick={handleOpenPasswordPrompt}>
+          <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row cursor-pointer">
+            <Button onClick={()=> setShowPaymentModal(!showPaymentModal)} className="cursor-pointer">
               Book Your Navratri Anushthan
             </Button>
           </div>
@@ -153,7 +157,7 @@ export function Hero() {
       </Container>
 
       {/* --- Password Modal Box --- */}
-      {showPasswordModal && (
+      {/* {showPasswordModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
           <div className="w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-2xl">
             <h3 className="text-xl font-bold text-foreground">Access Access Code</h3>
@@ -192,7 +196,64 @@ export function Hero() {
             </form>
           </div>
         </div>
+      )} */}
+
+      {showPaymentModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+          <div className="relative w-full max-w-lg rounded-2xl border border-border bg-background p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-bold text-foreground">Scan & Pay via UPI</h3>
+              <button 
+                onClick={() => setShowPaymentModal(false)}
+                className="text-muted hover:text-foreground text-lg font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* QR Code from Public Folder */}
+         
+{/* UPI QR Code */}
+<div className="mb-6 flex flex-col items-center justify-center">
+  <img
+    src="/upi-qr.jpeg"
+    alt="UPI Payment QR Code"
+    className="h-48 w-48 rounded-lg border border-border bg-white p-2 object-contain"
+  />
+
+  <p className="mt-2 text-center text-xs text-muted">
+    Scan and pay ₹199 using any UPI app.
+  </p>
+
+  <div className="mt-4 flex w-full flex-col gap-3 sm:flex-row">
+    {/* Download QR */}
+    <a
+      href="/upi-qr.jpeg"
+      download="Navratri-UPI-QR.jpeg"
+      className="flex flex-1 items-center justify-center rounded-lg border border-border px-4 py-3 text-sm font-semibold transition hover:bg-surface"
+    >
+      Download QR Code
+    </a>
+
+    {/* Open UPI App */}
+    <a
+      href="upi://pay?pa=YOUR_UPI_ID&pn=Navratri%20Anushthan&am=199&cu=INR"
+      className="flex flex-1 items-center justify-center rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+    >
+      Pay via UPI App
+    </a>
+  </div>
+</div>
+
+
+            {/* UPI Payment Form submitting Name, Contact, & UTR */}
+            <UPIPaymentForm  />
+          </div>
+        </div>
       )}
+
+
+
     </section>
   );
 }
