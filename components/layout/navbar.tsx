@@ -25,8 +25,8 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <Button href="/#book-your-navratri-anushthan" size="compact">
-            Book Your Navratri Anushthan
+          <Button href="/login" size="compact" className="rounded-xl px-4">
+            Login
           </Button>
           <MobileNavigation />
         </div>

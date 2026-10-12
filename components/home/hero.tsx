@@ -5,64 +5,32 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import CountdownTimer from "../CountdownTimer";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UPIPaymentForm from "../payment/UPIPaymentForm";
 
 const heroImage =
   "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=1800&q=90";
 
 export function Hero() {
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-
-
+const router = useRouter();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleOpenPasswordPrompt = () => {
-    setErrorMsg("");
-    setPassword("");
-    setShowPasswordModal(true);
-  };
-
-  const handlePasswordSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setErrorMsg("");
-
-    if (password !== "1234") {
-      setErrorMsg("Incorrect password. Please try again.");
-      return;
+  useEffect(() => {
+    // Check if user is already logged in via localStorage
+    const savedEmail = localStorage.getItem("user_email");
+    if (savedEmail) {
+      setIsLoggedIn(true);
     }
+  }, []);
 
-    try {
-      setLoading(true);
-
-      const res = await fetch("/api/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          anusthanId: "anusthan-1",
-          password: password,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (data.success && data.fileId) {
-        setShowPasswordModal(false);
-        router.push(`/watch?fileId=${data.fileId}`);
-      } else {
-        setErrorMsg(data.message || "Booking failed. Please try again.");
-      }
-    } catch (error) {
-      console.error("Booking error:", error);
-      setErrorMsg("An unexpected error occurred.");
-    } finally {
-      setLoading(false);
+  const handleBookClick = () => {
+    if (isLoggedIn) {
+      // अगर पहले से लॉग इन है, तो सीधा वीडियो पर भेजो
+      router.push(`/watch?fileId=anusthan-1`);
+    } else {
+      // वरना पेमेंट QR मोडल खोलो
+      setShowPaymentModal(true);
     }
   };
 
@@ -82,11 +50,20 @@ export function Hero() {
           <p className="mt-6 max-w-lg text-base leading-7 text-muted sm:text-lg sm:leading-8">
             A professionally recorded guided anushthan
           </p>
-          <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row cursor-pointer">
-            <Button onClick={()=> setShowPaymentModal(!showPaymentModal)} className="cursor-pointer">
-              Book Your Navratri Anushthan
+       <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row cursor-pointer">
+            <Button onClick={handleBookClick} className="cursor-pointer">
+              {isLoggedIn ? "Watch Your Anushthan Video" : "Book Your Navratri Anushthan"}
             </Button>
           </div>
+
+          {!isLoggedIn && (
+            <p className="mt-3 text-xs text-muted">
+              Already paid?{" "}
+              <a href="/login" className="text-gold underline hover:text-foreground">
+                Login here
+              </a>
+            </p>
+          )}
 
           <div className="mt-6 flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
             <span className="rounded-full border border-border bg-surface px-3 py-2">
