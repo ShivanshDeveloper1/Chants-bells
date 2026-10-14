@@ -33,7 +33,7 @@ export function FinalCta() {
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 min-[420px]:flex-row">
                 <Link
-                  href="/videos-collection"
+                  href="/"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-light-gold"
                 >
                   Book Your Navratri Anushthan <span aria-hidden="true">↗</span>
