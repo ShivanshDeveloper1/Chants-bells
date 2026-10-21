@@ -24,15 +24,136 @@ const router = useRouter();
     }
   }, []);
 
-  const handleBookClick = () => {
-    if (isLoggedIn) {
-      // अगर पहले से लॉग इन है, तो सीधा वीडियो पर भेजो
-      router.push(`/watch?fileId=anusthan-1`);
-    } else {
-      // वरना पेमेंट QR मोडल खोलो
-      setShowPaymentModal(true);
+
+const handleBookClick = async () => {
+  if (isLoggedIn) {
+    router.push("/watch?fileId=anusthan-1");
+    return;
+  }
+
+  try {
+    // Load Razorpay Checkout
+    const scriptLoaded = await new Promise<boolean>((resolve) => {
+      const existingScript = document.querySelector(
+        'script[src="https://checkout.razorpay.com/v1/checkout.js"]'
+      );
+
+      if (existingScript) {
+        resolve(true);
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+
+    if (!scriptLoaded) {
+      alert("Could not load Razorpay. Please try again.");
+      return;
     }
-  };
+
+    // Create an order on your server
+    const orderResponse = await fetch("/api/payments/create-order", {
+      method: "POST",
+    });
+
+    const orderData = await orderResponse.json();
+
+    if (!orderResponse.ok) {
+      throw new Error(orderData.error || "Could not create order");
+    }
+
+    // Razorpay Checkout response types
+    type RazorpaySuccess = {
+      razorpay_order_id: string;
+      razorpay_payment_id: string;
+      razorpay_signature: string;
+    };
+
+    type RazorpayOptions = {
+      key: string;
+      amount: number;
+      currency: string;
+      name: string;
+      description: string;
+      order_id: string;
+      handler: (response: RazorpaySuccess) => void;
+      modal: { ondismiss: () => void };
+      theme: { color: string };
+    };
+
+    type RazorpayInstance = {
+      open: () => void;
+    };
+
+    const RazorpayConstructor = (
+      window as Window & {
+        Razorpay?: new (
+          options: RazorpayOptions
+        ) => RazorpayInstance;
+      }
+    ).Razorpay;
+
+    if (!RazorpayConstructor) {
+      throw new Error("Razorpay Checkout is unavailable");
+    }
+
+    const options: RazorpayOptions = {
+      key: orderData.keyId,
+      amount: orderData.amount,
+      currency: orderData.currency,
+      name: "Navratri Anushthan",
+      description: "Guided Anushthan Video Access",
+      order_id: orderData.orderId,
+
+      handler: async (response) => {
+        try {
+          const verifyResponse = await fetch("/api/payments/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
+          });
+
+          const result = await verifyResponse.json();
+
+          if (!verifyResponse.ok || !result.verified) {
+            alert("Payment could not be confirmed. Please contact support.");
+            return;
+          }
+
+          // Do NOT rely on localStorage as payment proof.
+          // Your server must save access and establish an authenticated session.
+          // Redirect only after that process succeeds.
+          router.push("/watch?fileId=anusthan-1");
+        } catch {
+          alert(
+            "We couldn't confirm your payment. Please check your payment status before trying again."
+          );
+        }
+      },
+
+      modal: {
+        ondismiss: () => {
+          console.log("Razorpay Checkout closed");
+        },
+      },
+
+      theme: { color: "#C49A45" },
+    };
+
+    new RazorpayConstructor(options).open();
+  } catch (error) {
+    console.error(error);
+    alert(
+      error instanceof Error
+        ? error.message
+        : "Something went wrong. Please try again."
+    );
+  }
+};
 
   return (
     <section className="relative overflow-hidden border-b border-border/70">
